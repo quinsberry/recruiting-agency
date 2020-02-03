@@ -1,0 +1,312 @@
+
+/* ------- Fonts ------- */
+$overpass: 'Overpass', sans-serif;
+$source: 'Source Sans Pro', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $source;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ------- Globals ------- */
+h1, h2, h3 {
+ font-family: $overpass;
+}
+
+$hover-transition: .2s;
+
+
+/* ------- Colors ------- */
+$primary-clr: #ef6c00;
+$secondary-clr: #283593;
+$bg-clr: #fff;
+$hoveredLinks-color: #fc831f;
+$p-light-clr: #fefefe;
+$p-dark-clr: #4c4b4b;
+$bg-hovered-btn-signUp-inverse: #fc831f;
+$placeholder-clr: #8d8c8c;
+$input-active-clr: #b7b7b7;
+$select--option-clr: #393939;
+$bgc-disabled: #d7d7d7;
+$color-disabled: #8d8c8c;
+$bg-footer: #283593;
+
+/* ------- Buttons --------*/
+
+.btn-signUp {
+  width: 290px;
+  height: 40px;
+  background: $primary-clr;
+  border-radius: 5px;
+  padding: 8px 0 5px 0;
+  border: none;
+  font-family: $overpass;
+  font-size: 20px;
+  color: $p-light-clr;
+  cursor: pointer;
+  transition: $hover-transition;
+  &:hover {
+    background: $hoveredLinks-color;
+  }
+}
+.btn-signUp-inverse {
+  position: relative;
+  z-index: 1;
+  width: 290px;
+  border-radius: 5px;
+  padding: 5px 0 5px 0;
+  border: 2px solid $primary-clr;
+  border-radius: 4px;
+  font-family: $source;
+  font-weight: 700;
+  font-size: 20px;
+  // line-height: 60px;
+  color: $primary-clr;
+  cursor: pointer;
+  transition: $hover-transition;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: $bg-clr;
+  }
+  &:hover {
+    color: $hoveredLinks-color;
+    &:before {
+      background: $bg-hovered-btn-signUp-inverse;
+      opacity: .2;
+    }
+  }
+}
+
+/* ------- Inputs --------*/
+
+.select {
+  width: 450px;
+  height: 56px;
+  border-radius: 4px;
+  border: 1px solid #b7b7b7;
+  background: $bg-clr;
+  font-size: 16px;
+  padding-left: 17px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  outline: 0;
+  appearance: none;
+  &::-ms-expand {
+    display: none;
+  }
+  option {
+    position: relative;
+    outline: none;
+    box-shadow: 2px 3px 3px grey;
+    border: none;
+    height: 47px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $source;
+    color: $select--option-clr;
+    z-index: 3;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content:"";
+      z-index: 2;
+      background: $bg-clr;
+    }
+    &:hover {
+      &:before {
+        background: $primary-clr;
+        opacity: .2;
+      }
+    }
+  }
+}
+
+.slct {
+  position: relative;
+  &:after {
+    content: url('../../imgs/icons/caret-down.svg');
+    position: absolute; 
+    top: 16px; 
+    right: 13px;  
+    pointer-events: none;
+  }
+  &:hover {
+    &::after {
+    }
+  }
+}
+
+.input {
+  z-index: 1;
+  position: relative;
+  width: 290px;
+  height: 56px;
+  border: 1px solid #b7b7b7;
+  border-radius: 4px;
+  padding-top: 20px;
+  padding-left: 17px;
+  padding-bottom: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: $source;
+  cursor: pointer;
+  &::placeholder {
+    color: $placeholder-clr;
+  }
+  &:active {
+    border: 2px solid $input-active-clr;
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid $input-active-clr;
+  }
+}
+
+.inputLab {
+  &:before {
+    z-index: 2;
+    text-align: center;
+    content: "";
+    font-size: 12px;
+    font-weight: 400;
+    font-family: $source;
+    color: $placeholder-clr;
+    top: -9px;
+    left: 30px;
+    position: absolute;
+    background: #fff;
+  }
+}
+
+
+/* ------- Mixins --------*/
+
+@mixin media-xs {                                 /* Mobile */
+    @media screen and (min-width: 320px) {
+        @content;
+    }
+}
+@mixin media-sm {                                 /* Tablet */
+    @media screen and (min-width: 576px) {
+        @content;
+    }
+}
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin media-lg {                                   /* Desctop */
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+@mixin media-xl {
+    @media screen and (min-width: 1600px) {
+        @content;
+    }
+}
+
+/* ------- Global Classes --------*/
+
+@include media-xs {
+  body {
+    h1 {
+      font-family: $overpass;
+      font-size: 30px;
+      line-height: 36px;
+    }
+    h2 {
+      font-family: $overpass;
+      font-size: 26px;
+      line-height: 31px;
+    }
+    h3 {
+      font-family: $overpass;
+      font-size: 22px;
+      line-height: 26px;
+    }
+    h4 {
+      font-family: $overpass;
+      font-size: 22px;
+      line-height: 26px;
+    }
+    h5 {
+      font-family: $source;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+
+@include media-sm {
+  body {
+    h1 {
+      font-family: $overpass;
+      font-size: 42px;
+      line-height: 51px;
+    }
+    h2 {
+      font-family: $overpass;
+      font-size: 42px;
+      line-height: 51px;
+    }
+    h3 {
+      font-family: $overpass;
+      font-size: 26px;
+      line-height: 31px;
+    }
+    h5 {
+      font-family: $source;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+}
+
+@include media-lg {
+  body {
+    h1 {
+      font-family: $overpass;
+      font-size: 50px;
+      line-height: 60px;
+    }
+  }
+}
+
+p {
+  font-family: $source;
+  font-weight: 400;
+  .p1 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .p2 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .p3 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+

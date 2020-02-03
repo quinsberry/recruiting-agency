@@ -1,0 +1,330 @@
+@import 'config';
+@import 'media';
+
+body {
+  font-family: $overpass;
+}
+/* ------- Header ------- */
+nav {
+  display: flex !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  // padding: 18px 47px;
+  align-items: center;
+  height: 64px;
+  background: #fff;
+  z-index: 99;
+  box-shadow: 0 0 10px grey;
+}
+
+.navbar {
+  width: 100%;
+  padding: 0 !important;
+  &__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    margin-bottom: 0;
+    &-item {
+      margin-right: 30px;
+      font-weight: 400;
+      cursor: pointer;
+      a {
+        text-decoration: none;
+        transition: $hover-transition;
+        color: black;
+        &:hover {
+          text-decoration: none;
+          color: $primary-clr;
+        }
+      }
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+    }
+  }
+  .logo {
+    width: 134px;
+    height: 24px;
+  }
+  .signIn {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* ------- Main ------- */
+.main {
+  margin-top: 64px;
+  background: url('../../imgs/bg-1.jpg') no-repeat;
+  background-size: 122%;
+  background-position: top left;
+  height: 725px;
+}
+
+.hero {
+  color: $bg-clr;
+  max-width: 444px;
+  padding-top: 139px;
+  &-title {
+    font-weight: 400;
+    height: 166px;
+    margin-bottom: 0;
+  }
+  .p3 {
+    padding-top: 30px;
+    max-width: 425px;
+    margin-bottom: 0;
+  }
+  .btn-signUp {
+    margin-top: 45px;
+  }
+}
+
+/* ------- AboutMe ------- */
+
+.aboutMe {
+  height: 497px;
+  h2 {
+    margin-top: 139px;
+  }
+  .section-description {
+    padding-top: 29px;
+    h4 {
+      padding-top: 23px;
+      margin-bottom: 0;
+    }
+    .p2 {
+      padding-top: 30px;
+      margin-bottom: 0;
+      color: $p-dark-clr;
+      &:first-child {
+        padding-top: 14px;
+      }
+    }
+    .signUp-text {
+      padding-top: 26px;
+    }
+  }
+}
+
+.signUp-text {
+  font-size: 22px;
+  line-height: 60px;
+  font-weight: 700;
+  color: $primary-clr;
+  transition: $hover-transition;
+  &:hover {
+    color: $hoveredLinks-color;
+    text-decoration: none;
+  }
+}
+
+.section-title {
+  h2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ------- Relationship ------- */
+
+.relationship {
+  height: 722px;
+  h2 {
+    margin-top: 157px;
+  }
+  .section-description {
+    padding-top: 51px;
+    .col-lg-4 {
+      padding: 0px 20px;
+    }
+  }
+  &__item {
+    h4 {
+      padding-top: 28px;
+      margin-bottom: 0;
+    }
+    .p2 {
+      padding-top: 10px;
+      margin-bottom: 0;
+      color: $p-dark-clr;
+    }
+  }
+}
+
+/* ------- Requirements ------- */
+
+.requirements{
+  height: 755px;
+  background: url('../../imgs/bg-2.jpg');
+  background-size: cover;
+  color:$bg-clr;
+  h2 {
+    margin-top: 139px;
+    margin-bottom: 0;
+  }
+  .section-description {
+    padding-top: 50px;
+    .descr {
+      color: $p-light-clr;
+      .p2:nth-last-child(1) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* ------- Users ------- */
+
+.users {
+  h2 {
+    margin-top: 140px;
+    margin-bottom: 0;
+  }
+  .section-description {
+    padding-top: 60px;
+  }
+  &__item {
+    &-photo {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+    }
+    h4 {
+      padding-top: 27px;
+      margin-bottom: 0;
+    }
+    &-descr {
+      padding-top: 5px;
+      color: $p-dark-clr;
+      .p3 {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 0;
+        &:nth-child(2) {
+          padding-top: 2px;
+        }        
+        &:nth-child(3) {
+          padding-top: 1px;
+        }        
+      }
+    }
+  }
+  .btn-section {
+    .btn-signUp-inverse {
+      margin-top: 56px;
+    }
+  }
+}
+
+/* ------- SignUpForm ------- */
+
+.signUpForm {
+  height: 693px;
+  h2 {
+    margin-top: 160px;
+    margin-bottom: 0;
+  }
+  &__form {
+    padding-top: 63px;
+
+    .row:nth-child(2) {
+      padding-top: 40px;
+    }
+    .inputLab {
+      &:before {
+        position: absolute;
+        width: 36px;
+        height: 12px;
+        background: #fff;
+      }
+    }
+    .name {
+      &:before {
+        content: "Name";
+      }
+    }
+    .email {
+      &:before {
+        content: "Email";
+      }
+    }
+    .phone {
+      &:before {
+        content: "Phone";
+        width: 39px;
+      }
+    }
+    .upload {
+      position: relative;
+      &-input {
+        border-radius: 4px 0 0 4px;
+        width: 320px;
+      }
+      &-btn {
+        width: 130px;
+        height: 56px;
+        border-radius: 0 4px 4px 0;
+      }
+      &:before {
+        content: 'File format jpg  up to 5 MB, the minimum sizof 70x70px';
+        z-index: 1;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 400;
+        font-family: $source;
+        color: $placeholder-clr;
+        bottom: -22px;
+        left: 20px;
+        position: absolute;
+        background: #fff;
+      }
+    }
+    .btn-signUp {
+      margin-top: 52px;
+    }
+    .disabled {
+      background-color: $bgc-disabled;
+      color: $color-disabled;
+      pointer-events: none;
+      cursor: pointer;
+    }
+  }
+}
+
+/* ------- Footer ------- */
+
+.footer {
+  &__container-nav {
+    padding: 35px 0;
+  }
+  &__line {
+    border-bottom: 1px solid #5674b9;
+  }
+  height: 314px;
+  background-color: $bg-footer;
+  color: white;
+  .logo {
+    width: 134px;
+    height: 24px;
+  }
+  .navbar {
+    &__items {
+      &-item {
+        font-size: 16px;
+      }
+    }
+  }
+  a {
+    color: white;
+  }
+}
+

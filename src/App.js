@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './styles/css/main.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar/Navbar';
+import Main from './components/Main/Main';
+import AboutMe from './components/AboutMe/AboutMe';
+import Relationship from './components/Relationship/Relationship';
+import Requirements from './components/Requirements/Requirements';
+import Users from './components/Users/Users';
+import SignUpForm from './components/SignUp/SignUpForm';
+import Footer from './components/Footer/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+  render() {
+    return (
+      <>
+        <Navbar />
+        <Main />
+        <AboutMe />
+        <Relationship />
+        <Requirements />
+        <Users />
+        <SignUpForm />
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default App;
